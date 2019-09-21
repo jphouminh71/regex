@@ -1,0 +1,63 @@
+# any input that has starting number 1, 2, 3, followed by a period, one or more 
+# white spaces, followed by a b then c. 
+[1|2|3]\.\s+abc
+
+#matches any pattern with 1,2,3 
+
+123 
+
+# matches any first 3 characters regardless of what they are, but it has to be followed
+# by a period. 
+
+...\. 
+
+# matches first character as c m or f, must be follwed by next 2 characters an
+
+[c|m|f]an
+
+# matches any first character EXCEPT b (case sensitive) followed by og 
+
+[^b]og
+
+# matches characters in specified ranges (case sensitive) 
+
+[A-C][n-p][a-n]
+
+# matches characters, matches letter z only if 2-5 (inclusive) occur
+# followed by 'u''p' characters 
+waz{2,5}up
+
+# more expressions... 
+
+a{2,4}b{0,4}c{1,2}
+
+# any number charactor , one or more, file or file(s), followed by a ? (escaped)  
+\d+ files? found\?
+
+# any one character number, followed by a . (escaped) followed by 
+# one or more space characters, followed directly by a b c 
+
+\d\.\s+abc
+
+# ^...$ , this pattern matches only LINES that begin and end with the specified 
+# parameters, in this case, lines that start and end with Mission: successful$
+
+^Mission: successful$
+
+# looks for lines that start and end with this expression but only actually matches 
+# the  () parts of the expression. 
+
+^(file_.+)\.pdf$
+
+# we can also capture groups nestedly , they are captured frome left to right 
+
+(... (\d+))
+
+# capturing multiple groups 
+
+^(\d+)\x(\d+)$
+
+#pipe operators (OR | )
+
+I love (cats|dogs)
+
